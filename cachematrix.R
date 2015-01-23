@@ -34,7 +34,7 @@
 #
 #       NOTE: The makeCacheMatrix needs to be saved to a variable - otherwise the instance of the cached matrix
 #       (and the cached value/environment it's saving) is lost i.e. this function is most effective within a function or script, 
-#       not standalone on the command line. sImilarly, the cacheSolve function works with values created by the makeCacheMatrix, not 
+#       not standalone on the command line. similarly, the cacheSolve function works with values created by the makeCacheMatrix, not 
 #       other variables. 
 #
 #       Once a cached value has been stored using makeCacheMatric
@@ -47,8 +47,7 @@
 #       
 #           cacheSolve(a_matrix_cache)
 #           # the first time this is called, the inverse is calclated by solve(a_matrix), stored and returned. 
-#           # subsequent calls return the cached or stored value
-#       
+#           # subsequent calls return the cached or stored value      
 #
 #   (c) Within any usage for these functions, the script using them will take care of the process for calling each 
 #       cached result using the variable created from the 'make' function - the assignment doesn't require this to be developed
@@ -57,6 +56,7 @@
 #       that you would change the matrix value in this way and could lead to errors (e.g. if the matrix value was changed  
 #       and the inverse not recalculated.
 #       Refs:
+#               https://class.coursera.org/rprog-010/forum/thread?thread_id=364#comment-2103        
 #
 ## Description: makeCacheMatrix()
 #   with an input of a square matrix which is invertible, create a set of functions which can be used to initially store, then return
