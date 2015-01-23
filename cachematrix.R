@@ -62,6 +62,7 @@
 #   with an input of a square matrix which is invertible, create a set of functions which can be used to initially store, then return
 #   the cached value of the inverse matrix via the cacheSolve() function.
 #
+#   TESTING GIT INTEGRATION
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
