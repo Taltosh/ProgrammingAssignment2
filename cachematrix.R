@@ -91,19 +91,33 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
+
+    #   retrieve the stored value for the inverse matrix
     inv <- x$getinverse()
+
+    
+    #   Test whether the inverse has been created yet
+
     if(!is.null(inv)) {
-#   message("getting cached data")
-#   This function not really required, as it really only helped explain how makeVector/cachemean functions worked in the example
-#        
+
+    #   message("getting cached data")
+    #   This message not really required, as it really only helped explain how makeVector/cachemean functions worked in the example
+
+    #   Yes - inverse has been calculated previously, so returning saved (i.e.cached value previously calculated) result
+        
         return(inv)
-#   returning saved (i.e.cached value previously calculated) 
     }
-#   variable inv is NULL, so calculate the inverse of the initial matrix 
+
+#   variable inv is NULL, so the inverse of the initial matrix has not yet been calculated. So we calculate it now: 
+
     data <- x$get()
     inv <- solve(data, ...)
-#   store the calculated inverse of the initial matrix 
+
+#   thenn store the calculated inverse of the initial matrix for the next time the inverse is required
+
     x$setinverse(inv)
+
 #   return inverse of the inital matrix 
+
     inv
 }
